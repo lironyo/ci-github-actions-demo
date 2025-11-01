@@ -8,10 +8,18 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python: ['3.7', '3.8', '3.9', '3.10']
+        include:
+          - python: 3.7
+            os: ubuntu-20.04
+          - python: 3.8
+            os: ubuntu-latest
+          - python: 3.9
+            os: ubuntu-latest
+          - python: 3.10
+            os: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,6 +37,6 @@ jobs:
 
       - name: Run tests
         run: pytest
-        
+
       - name: Echo success message
-        run: echo "Scheduled test completed successfully for Python ${{ matrix.python }}!"
+        run: echo "Scheduled test completed successfully for Python ${{ matrix.python }} on ${{ matrix.os }}!"
