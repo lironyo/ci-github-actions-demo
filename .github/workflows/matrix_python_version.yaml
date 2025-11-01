@@ -7,12 +7,18 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    container: debian:latest 
+
     strategy:
       matrix:
         python-version: [3.7, 3.8, 3.9, '3.10']
 
     steps:
+      - name: container dependencies
+        run: |
+          apt-get update
+          apt-get install -y git curl
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -29,4 +35,4 @@ jobs:
         run: python -m unittest discover tests
 
       - name: echo
-        run: echo "Scheduled test completed successfully for Python ${{ matrix.python }}"
+        run: echo "Scheduled test completed successfully for Python ${{ matrix.python-version }}"
