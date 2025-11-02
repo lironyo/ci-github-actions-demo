@@ -1,6 +1,7 @@
 name: Matrix pyrhon version test
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
