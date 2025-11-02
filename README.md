@@ -1,6 +1,10 @@
 #  **ci-github-actions-demo**
 
-This repository contains **4 separate GitHub Actions workflows**, explicitly designed to address each task of the assignment with a unique, dedicated file.
+This repository contains **4 separate GitHub Actions workflows**
+1. CI check
+2. unitest - single version
+3. scheduled workflow (cron)
+4. testing multi version python - multi and single OS 
 
 ---
 
