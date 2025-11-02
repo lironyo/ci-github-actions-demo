@@ -1,7 +1,7 @@
 #  **ci-github-actions-demo**
 
 This repository contains **4 separate GitHub Actions workflows**
-1. CI check
+1. CI check - self hosted
 2. unitest - single version
 3. scheduled workflow (cron)
 4. testing multi version python - multi and single OS 
@@ -10,11 +10,11 @@ This repository contains **4 separate GitHub Actions workflows**
 
 ## 💻 **Workflow Files Implemented**
 
-### 1️⃣ **Basic CI Check** (`ci.yml`)
+### 1️⃣ **Basic CI Check** (`ci.yml`) - self hosted
 
-This workflow confirms the most fundamental CI trigger and logging capability.
+This workflow confirms the most fundamental CI trigger and logging capability on self host
 
-* **Goal:** Execute the simplest CI step.
+* **Goal:** Execute the simplest CI step - self hosted
 * **Trigger:** Code **Push** to the `main` branch.
 * **Action:** Runs a shell command that prints: **`Hello, CI with GitHub Actions!`**
 
